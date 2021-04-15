@@ -1,12 +1,13 @@
 from telnetlib import Telnet
 
+
 #
 #
 #   http://pages.cs.wisc.edu/~ballard/bofh/
 #
 #
 
-def bofh(host="bofh.jeffballard.us", port=666, timeout=180, secondCall=False):
+def bofh(host="bofh.jeffballard.us", port=666, timeout=180, secondcall=False):
     try:
         tn = Telnet(host, port, timeout)
         tn.open(host, port, timeout)
@@ -22,7 +23,7 @@ def bofh(host="bofh.jeffballard.us", port=666, timeout=180, secondCall=False):
             print("[ERROR] %s on %s:%d (%d)" % (reason, host, port, code))
         except IndexError:
             if e.args[0] == "timed out" and port in port:
-                if secondCall is False:
+                if secondcall is False:
                     print("[!] extending timeout on common port (%d)" % port)
 
 
