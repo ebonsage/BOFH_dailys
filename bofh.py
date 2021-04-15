@@ -1,5 +1,10 @@
 from telnetlib import Telnet
 
+#
+#
+#   http://pages.cs.wisc.edu/~ballard/bofh/
+#
+#
 
 def bofh(host="bofh.jeffballard.us", port=666, timeout=180, secondCall=False):
     try:
